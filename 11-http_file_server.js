@@ -1,14 +1,14 @@
-var fs = require('fs');
+var fs   = require('fs');
 var http = require('http');
+// var bl   = require('bl');
 
-var port = process.argv[2];
+var port     = process.argv[2];
 var fileName = process.argv[3];
 
-
 var server = http.createServer( function(request, response){
-  var file = fs.createReadStream(fileName);
-  file.setEncoding('utf8');
-  response.end( file );
+
+  fs.createReadStream( fileName ).pipe( response );
+
 });
 
 
