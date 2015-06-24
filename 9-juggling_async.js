@@ -1,14 +1,12 @@
 var http = require('http');
-var bl = require('bl');
+var bl   = require('bl');
 
-var urls = process.argv.slice(2);
+var urls      = process.argv.slice(2);
 var callbacks = urls.length;
-var content = [];
+var content   = [];
 
 urls.forEach( function( url, id ){
-
   http.get( url, function( response ){
-
     response.pipe( bl( function(err, data){
 
       if(err){
@@ -23,9 +21,6 @@ urls.forEach( function( url, id ){
           console.log( data );
         });
       }
-
     })); //response
-
-
   }); // http.get
 }); // urls.forEach
