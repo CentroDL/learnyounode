@@ -1,5 +1,5 @@
 var net      = require('net');
-var strftime = require('./node_modules/strftime');
+var strftime = require('strftime');
 var port     = process.argv[2];
 
 var server = net.createServer( function(socket){
