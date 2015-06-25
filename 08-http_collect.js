@@ -7,6 +7,7 @@ http.get( process.argv[2], function(response){
     if(err){
       throw(err);
     }
+
     words = data.toString();
 
     console.log( words.length );
